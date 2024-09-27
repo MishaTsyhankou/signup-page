@@ -1,3 +1,3 @@
 clone project
-for start in terminal
-live-server
+for start in terminal print command
+"live-server"
