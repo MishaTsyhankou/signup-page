@@ -1,0 +1,410 @@
+:root {
+    --font-family: 'Open Sans', sans-serif;
+    --primary-gradient: linear-gradient(238.08deg, #D4208C 0.42%, #E61726 82.5%);
+    --button-gradient: linear-gradient(90deg, #D4208C 0%, #E61726 100%);
+    --button-hover-color: #e60073;
+    --font-size-base: 16px;
+    --color-primary: #e90052;
+    --color-secondary: #f81f71;
+    --color-text: rgba(58, 58, 58, 1);
+    --background-color: white;
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-size: 100%;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Основные стили страницы */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+    padding: 50px;
+    height: auto;
+}
+
+@media (max-width: 375px) { 
+    .container {
+        flex-direction: column;
+        padding: 0px;
+    }
+}
+
+/* Левая секция */
+.left-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 729px;
+    height: 689.85px;
+}
+
+@media (max-width: 375px) { 
+    .left-section {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+.grouped-image {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 375px) { 
+    .grouped-image {
+        width: 290px;
+        height: 274px;
+    }
+}
+
+/* Правая секция */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-section h1 {
+    font-family: var(--font-family);
+    font-size: 77px;
+    font-weight: 800;
+    line-height: 84.72px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 375px) { 
+    .right-section h1 {
+        font-size: 35px;
+        line-height: 38.51px;
+    }
+}
+
+.right-section h1::after {
+    content: "Participate";
+    display: block;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 77px;
+    font-weight: 800;
+    line-height: 84.72px;
+    letter-spacing: -0.05em;
+}
+
+@media (max-width: 375px) { 
+    .right-section h1::after {
+        font-size: 35px;
+        line-height: 38.51px;
+    }
+}
+
+/* Стили для списка */
+ol li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: var(--font-family);
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 51.75px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: var(--color-text);
+}
+
+@media (max-width: 375px) { 
+    ol li {
+        font-size: 18.82px;
+        line-height: 37.3px;
+    }
+}
+
+ol li::before {
+    content: counter(list-item) ".";
+    counter-increment: list-item;
+    font-family: var(--font-family);
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 74.9px;
+    letter-spacing: -0.05em;
+    margin-right: 15px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 375px) { 
+    ol li::before {
+        font-size: 33.02px;
+        line-height: 44.97px;
+    }
+}
+
+/* Стили для кнопки */
+.signup-btn {
+    width: 387px;
+    height: 81px;
+    padding: 25px 51px;
+    border-radius: 10px;
+    background: var(--button-gradient);
+    color: white;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 31.32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 375px) { 
+    .signup-btn {
+        width: 251px;
+        height: 49px;
+        font-size: 13.81px;
+        line-height: 18.81px;
+    }
+}
+
+.signup-btn:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Попап */
+.custom-dialog {
+    width: 55vw;
+    max-width: 900px;
+    padding: 80px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--background-color);
+    z-index: 1001;
+}
+
+@media (max-width: 375px) { 
+    .custom-dialog {
+        width: 278px;
+        padding: 20px;
+    }
+}
+
+.custom-dialog h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+@media (max-width: 375px) { 
+    .custom-dialog h2 {
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 15px 0;
+    margin: 15px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    text-align: center;
+    outline: none;
+}
+
+input:focus {
+    border-bottom: 2px solid var(--color-primary);
+}
+
+input::placeholder {
+    color: #aaa;
+    font-size: var(--font-size-base);
+    text-align: center;
+}
+
+button[type="submit"] {
+    background: var(--button-gradient);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    margin-top: 25px;
+    width: 40%;
+}
+
+button[type="submit"]:hover {
+    background: var(--color-primary);
+}
+
+@media (max-width: 375px) { 
+    button[type="submit"] {
+        width: 50%;
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 24px;
+    }
+}
+
+/* Кнопка закрытия */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.close-button::before,
+.close-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 36px;
+    height: 4px;
+    background-color: var(--color-primary);
+    transform-origin: center;
+}
+
+.close-button::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-button::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media (max-width: 375px) {
+    .close-button {
+        width: 24px;
+        height: 24px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .close-button::before,
+    .close-button::after {
+        width: 16px;
+        height: 2px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: none;
+}
+
+.thank-you-title {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.thank-you-message {
+    font-family: var(--font-family);
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: var(--color-text);
+}

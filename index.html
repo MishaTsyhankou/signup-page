@@ -5,9 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap" rel="stylesheet">
+    <script src="js/main.js" defer></script>
+
 </head>
 <body>
-    <!-- Main content goes here -->
-    <script src="js/main.js"></script>
+    <div class="container">
+        <div class="left-section">
+            <img src="img/people.webp" alt="Grouped People and Heart" class="grouped-image" loading="lazy">
+        </div>
+        <div class="right-section">
+            <div class="header"><h1>How to</h1></div>
+            <ol>
+                <li>Subscribe to our News</li>
+                <li><button id="open-dialog" class="signup-btn">SIGN UP</button></li>
+                <li>Check your email inbox</li>
+                <li>Wait till September 22</li>
+            </ol>
+        </div>
+    </div>
+    
+ <!-- POP-UP -->
+    <div id="overlay" class="overlay"></div>
+    <dialog class="custom-dialog">
+        <button class="close-button" aria-label="Close"></button>
+        <h2>To register, enter the mail to which our news is sent and set your password</h2>
+        <form method="dialog">
+            <input type="email" placeholder="Example@email.com" required>
+            <input type="password" placeholder="Password" minlength="8" required>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </dialog>
 </body>
 </html>
